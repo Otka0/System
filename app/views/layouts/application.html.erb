@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>System</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="container">
+      <div id="nav">
+      <ul id="mainmenu">
+  <li><%= link_to "Strona Główna", :root %></li>
+  <% if current_user %>
+     
+           <li><%= link_to "Wyloguj", :logout %></li>
+  <% else %>
+      <li><%= link_to "Zarejestruj się", new_user_path %></li>
+      <li><%= link_to "Zaloguj się", :login %></li>
+  <% end %>
+ 
+</ul>
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>
