@@ -1,39 +1,27 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Login:</strong>
-  <%= @user.login %>
+<strong>Login:</strong>
+<%= @user.login %>
 </p>
-
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+<strong>Email:</strong>
+<%= @user.email %>
 </p>
-
 <p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
+<strong>Name:</strong>
+<%= @user.name %>
 </p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+<strong>Surname:</strong>
+<%= @user.surname %>
 </p>
-
 <p>
-  <strong>Surname:</strong>
-  <%= @user.surname %>
+<strong>Role:</strong>
+<%= @user.role %>
 </p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Persistence token:</strong>
-  <%= @user.persistence_token %>
-</p>
-
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+  
+
+
