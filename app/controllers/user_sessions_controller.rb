@@ -1,4 +1,3 @@
-
 class UserSessionsController < ApplicationController
 def new
 @user_session = UserSession.new
@@ -7,7 +6,17 @@ def create
 @user_session = UserSession.new(params[:user_session])
 if @user_session.save
 flash[:notice] = "Successfully logged in."
-after_sign_in_path_for(User)
+
+
+#after_sign_in_path_for(User)
+#redirect_to root_path
+if current_user.role?("central")
+redirect_to '/committees'
+else
+redirect_to '/districts'
+end
+
+
 else
 render :action => 'new'
 end
