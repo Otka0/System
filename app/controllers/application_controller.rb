@@ -8,9 +8,14 @@ class ApplicationController < ActionController::Base
 			if current_user.role?("admin")
 				redirect_to '/admin'
 			elsif current_user.role?("central")
-				redirect_to current_user
-			else
-				redirect_to root_path
+				redirect_to '/committees'
+			else current_user.role?("district")
+				redirect_to '/districts'
+
+			#elsif current_user.role?("central")
+			#	redirect_to current_user 
+			#else
+			#	redirect_to root_path
 			end
 		end
 

@@ -12,7 +12,6 @@
       <ul id="mainmenu">
   <li><%= link_to "Strona Główna", :root %></li>
   <% if current_user %>
-     
            <li><%= link_to "Wyloguj", :logout %></li>
   <% else %>
       <li><%= link_to "Zarejestruj się", new_user_path %></li>
